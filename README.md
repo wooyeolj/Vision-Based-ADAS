@@ -19,7 +19,7 @@
 ![Image](https://github.com/user-attachments/assets/8a53ab16-71b0-41cc-8774-b417bead44fd)
 
 
-
+</div>
 
 ## 목차
 1. [프로젝트 소개]
