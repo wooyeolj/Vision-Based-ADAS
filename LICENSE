@@ -3,9 +3,11 @@ MIT License
 Copyright (c) 2025 wooyeolj
 
 본 소프트웨어는 2024 한이음 ICT 멘토링 프로그램의 팀 프로젝트로 개발되었습니다.
+This software was developed as a team project of the 2024 Hanium ICT mentoring program.
 
-⚠️ 면책 조항:
-본 소프트웨어는 실제 차량이나 안전이 중요한 시스템에 사용되어서는 안 됩니다.
+⚠️
+본 소프트웨어는 실제 차량이나 안전 시스템에 사용되어서는 안 됩니다.
+This software should not be used in actual vehicles or safety systems.
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
