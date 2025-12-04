@@ -2,8 +2,6 @@
 
 ### Vision-Based-ADAS
 
-<br />
-
 > 센서 없이 **OpenCV**와 **YOLOv5** 로 구현한 지능형 주행 보조 시스템
 
 
@@ -13,9 +11,6 @@
 [![YOLOv5](https://img.shields.io/badge/YOLOv5-00FFFF?style=flat)](https://github.com/ultralytics/yolov5)
 [![Raspberry Pi](https://img.shields.io/badge/Raspberry%20Pi-5-C51A4A?style=flat&logo=raspberry-pi&logoColor=white)](https://www.raspberrypi.com/)
 [![Arduino](https://img.shields.io/badge/Arduino-UNO-00979D?style=flat&logo=arduino&logoColor=white)](https://www.arduino.cc/)
-
-<br />
-</div>
 
 ### 프로젝트 데모
 ![Image](https://github.com/user-attachments/assets/e2915de3-207e-4805-91f9-c9e6f4306fb0)
