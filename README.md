@@ -12,7 +12,6 @@
 <div align="center">
 
 ### 프로젝트 데모
-| 차선 탐지 |
 ![Image](https://github.com/user-attachments/assets/e2915de3-207e-4805-91f9-c9e6f4306fb0)
 
 ![Image](https://github.com/user-attachments/assets/99476136-0403-4d5e-a7f2-a1ca7cbcbdb1)
@@ -20,7 +19,7 @@
 ![Image](https://github.com/user-attachments/assets/8a53ab16-71b0-41cc-8774-b417bead44fd)
 
 
-</div>
+<div align="center">
 ---
 
 ## 목차
