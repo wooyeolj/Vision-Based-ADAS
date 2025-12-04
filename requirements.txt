@@ -1,0 +1,19 @@
+# ===========================================
+# Vision-Based ADAS Project Requirements
+# Python Version: 3.9+
+# ===========================================
+
+# Computer Vision
+opencv-python==4.8.0.74
+numpy==1.24.3
+
+# Deep Learning
+torch==2.0.1
+torchvision==0.15.2
+ultralytics==8.0.135
+
+# Hardware Communication
+pyserial==3.5
+
+# Web Scraping
+requests==2.31.0
