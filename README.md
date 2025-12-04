@@ -9,6 +9,7 @@
 [![PyTorch](https://img.shields.io/badge/PyTorch-2.0-EE4C2C?style=for-the-badge&logo=pytorch&logoColor=white)](https://pytorch.org/)
 [![YOLOv5](https://img.shields.io/badge/YOLOv5-00FFFF?style=for-the-badge&logo=yolo&logoColor=white)](https://github.com/ultralytics/yolov5)
 
+<div align="center">
 
 ### 프로젝트 데모
 
