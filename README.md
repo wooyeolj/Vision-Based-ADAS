@@ -125,7 +125,7 @@ ADAS 기술은 운전자의 안전과 편의성 측면에서 중요한 요소로
 
 ## 3.시스템 아키텍쳐
 
-## 🛠️ 4.기술 스택 (Tech Stack)
+## 🛠️ 4.기술 스택
 
 ### 💻 Software Stack
 |        분류        | 기술                         |   버전 | 용도                             |
@@ -146,17 +146,6 @@ ADAS 기술은 운전자의 안전과 편의성 측면에서 중요한 요소로
 |   카메라   | **USB WebCam**      | 720p | 도로 영상 입력                   |
 |    모터   | **DC Motor x4**     | 6~12V     | 차량 구동                      |
 |    전원   | **AA Battery Pack** | 6×1.5V     | 모터 및 드라이버 전원 공급            |
-
-### 🧪 Development Environment
-
-|    분류    | 도구                          | 설명                          |
-| :------: | --------------------------- | --------------------------- |
-| 운영체제(OS) | **Raspberry Pi OS (64bit)** | Pi 5의 메인 실행 환경              |
-|   개발 환경  | **VS Code / Thonny**        | Python 개발 및 테스트             |
-|  딥러닝 학습  | **Windows 11 + CUDA 환경**    | YOLOv5 모델 학습                |
-|   버전 관리  | **GitHub**                  | 프로젝트 공유 및 협업                |
-|   문서 작성  | **아래한글**           | 결과 보고서 및 분석 문서 정리           |
-|   통신 도구  | **UART Serial Monitor**     | Arduino–Raspberry Pi 연결 테스트 |
 
 ### ⭐ 배지(Badges)
 <div align="center">
