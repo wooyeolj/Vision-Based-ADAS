@@ -124,7 +124,34 @@ ADAS 기술은 운전자의 안전과 편의성 측면에서 중요한 요소로
 
 ## 2.주요 기능
 
-## 3.시스템 아키텍쳐
+## 🏗️ 3.시스템 아키텍쳐
+---
+### H/W 구성도
+
+회로도
+<img width="432" height="247" alt="image" src="https://github.com/user-attachments/assets/99de63d4-4cb2-4124-a659-c363e90f96dc" />
+L298N 20W 2채널 모터 드라이버 모듈
+<img width="326" height="234" alt="image" src="https://github.com/user-attachments/assets/05219c48-c05b-43e3-8f69-fc064e20c0f3" />
+---
+### S/W 구성도
+
+Lane Tracer
+<img width="621" height="358" alt="image" src="https://github.com/user-attachments/assets/74170473-170c-4459-b603-592b28dcac8d" />
+Object Detection
+<img width="635" height="362" alt="image" src="https://github.com/user-attachments/assets/98e23368-5f04-496e-bb8f-f49ace3d1aad" />
+
+### 서비스 흐름도
+Lane Tracer
+<img width="525" height="238" alt="image" src="https://github.com/user-attachments/assets/d38f02bc-a475-4e9b-9c9f-18462ce3cd0a" />
+Object Detection
+<img width="658" height="278" alt="image" src="https://github.com/user-attachments/assets/cdeba528-5189-44a0-8d4a-a699b834f74e" />
+
+### RC 카 
+아두이노 4WD 주행로봇 프레임 세트 [SZH-EK098]
+<img width="598" height="576" alt="image" src="https://github.com/user-attachments/assets/7f2db326-27ea-4c9a-93cd-bf249d6812e1" />
+
+
+
 
 ## 🛠️ 4.기술 스택
 
