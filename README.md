@@ -2,7 +2,7 @@
 
 ### Vision-Based-ADAS
 
-> 센서 없이 **OpenCV**와 **YOLOv5** 로 구현한 지능형 주행 보조 시스템
+> 센서 없이 **OpenCV**와 **YOLOv5** 로 구현한 지능형 주행 보조 시스템 </div>
 > Advanced Driver Assistance System
 
 
