@@ -125,42 +125,25 @@ ADAS 기술은 운전자의 안전과 편의성 측면에서 중요한 요소로
 ## 2.주요 기능
 
 ## 🏗️ 3.시스템 아키텍쳐
+
 ---
+
 ### 🔧 H/W 구성도
 
-회로도
+<table> <tr> <td align="center"><b>회로도</b><br> <img src="https://github.com/user-attachments/assets/99de63d4-4cb2-4124-a659-c363e90f96dc" width="95%"> </td> <td align="center"><b>L298N 20W 모터 드라이버</b><br> <img src="https://github.com/user-attachments/assets/05219c48-c05b-43e3-8f69-fc064e20c0f3" width="75%"> </td> </tr> </table>
 
-<div align="center"> <img src="https://github.com/user-attachments/assets/99de63d4-4cb2-4124-a659-c363e90f96dc" width="70%" /> </div>
-
-L298N 20W 2채널 모터 드라이버 모듈
-
-<div align="center"> <img src="https://github.com/user-attachments/assets/05219c48-c05b-43e3-8f69-fc064e20c0f3" width="55%" /> </div>
 ---
+
 ### 💻 S/W 구성도
 
-Lane Tracer 구성도
+<table> <tr> <td align="center"><b>Lane Tracer</b><br> <img src="https://github.com/user-attachments/assets/74170473-170c-4459-b603-592b28dcac8d" width="95%"> </td> <td align="center"><b>Object Detection</b><br> <img src="https://github.com/user-attachments/assets/98e23368-5f04-496e-bb8f-f49ace3d1aad" width="95%"> </td> </tr> </table>
 
-<div align="center"> <img src="https://github.com/user-attachments/assets/74170473-170c-4459-b603-592b28dcac8d" width="85%" /> </div>
-
-Object Detection 구성도
-
-<div align="center"> <img src="https://github.com/user-attachments/assets/98e23368-5f04-496e-bb8f-f49ace3d1aad" width="85%" /> </div>
 ---
+
 ### 서비스 흐름도
-Lane Tracer Flow
+<table> <tr> <td align="center"><b>Lane Tracer Flow</b><br> <img src="https://github.com/user-attachments/assets/d38f02bc-a475-4e9b-9c9f-18462ce3cd0a" width="95%"> </td> <td align="center"><b>Object Detection Flow</b><br> <img src="https://github.com/user-attachments/assets/cdeba528-5189-44a0-8d4a-a699b834f74e" width="95%"> </td> </tr> </table>
 
-<div align="center"> <img src="https://github.com/user-attachments/assets/d38f02bc-a475-4e9b-9c9f-18462ce3cd0a" width="70%" /> </div>
-
-Object Detection Flow
-
-<div align="center"> <img src="https://github.com/user-attachments/assets/cdeba528-5189-44a0-8d4a-a699b834f74e" width="75%" /> </div>
 ---
-### RC 카 
-아두이노 4WD 주행로봇 프레임 세트 [SZH-EK098]
-<div align="center"> <img src="https://github.com/user-attachments/assets/7f2db326-27ea-4c9a-93cd-bf249d6812e1" width="75%" /> </div>
----
-
-
 
 ## 🛠️ 4.기술 스택
 
