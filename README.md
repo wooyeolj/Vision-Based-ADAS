@@ -140,7 +140,7 @@ ADAS 기술은 운전자의 안전과 편의성 측면에서 중요한 요소로
 
 ---
 
-### 서비스 흐름도
+### 🔄 서비스 흐름도
 <table> <tr> <td align="center"><b>Lane Tracer Flow</b><br> <img src="https://github.com/user-attachments/assets/d38f02bc-a475-4e9b-9c9f-18462ce3cd0a" width="95%"> </td> <td align="center"><b>Object Detection Flow</b><br> <img src="https://github.com/user-attachments/assets/cdeba528-5189-44a0-8d4a-a699b834f74e" width="95%"> </td> </tr> </table>
 
 ---
