@@ -126,44 +126,43 @@ ADAS 기술은 운전자의 안전과 편의성 측면에서 중요한 요소로
 
 ## 🏗️ 3.시스템 아키텍쳐
 ---
-### H/W 구성도
+### 🔧 H/W 구성도
 
 회로도
-<img width="432" height="247" alt="image" src="https://github.com/user-attachments/assets/99de63d4-4cb2-4124-a659-c363e90f96dc" />
+
+<div align="center"> <img src="https://github.com/user-attachments/assets/99de63d4-4cb2-4124-a659-c363e90f96dc" width="70%" /> </div>
+
 L298N 20W 2채널 모터 드라이버 모듈
-<img width="326" height="234" alt="image" src="https://github.com/user-attachments/assets/05219c48-c05b-43e3-8f69-fc064e20c0f3" />
+
+<div align="center"> <img src="https://github.com/user-attachments/assets/05219c48-c05b-43e3-8f69-fc064e20c0f3" width="55%" /> </div>
 ---
-### S/W 구성도
+### 💻 S/W 구성도
 
-Lane Tracer
-<img width="621" height="358" alt="image" src="https://github.com/user-attachments/assets/74170473-170c-4459-b603-592b28dcac8d" />
-Object Detection
-<img width="635" height="362" alt="image" src="https://github.com/user-attachments/assets/98e23368-5f04-496e-bb8f-f49ace3d1aad" />
+Lane Tracer 구성도
 
+<div align="center"> <img src="https://github.com/user-attachments/assets/74170473-170c-4459-b603-592b28dcac8d" width="85%" /> </div>
+
+Object Detection 구성도
+
+<div align="center"> <img src="https://github.com/user-attachments/assets/98e23368-5f04-496e-bb8f-f49ace3d1aad" width="85%" /> </div>
+---
 ### 서비스 흐름도
-Lane Tracer
-<img width="525" height="238" alt="image" src="https://github.com/user-attachments/assets/d38f02bc-a475-4e9b-9c9f-18462ce3cd0a" />
-Object Detection
-<img width="658" height="278" alt="image" src="https://github.com/user-attachments/assets/cdeba528-5189-44a0-8d4a-a699b834f74e" />
+Lane Tracer Flow
 
+<div align="center"> <img src="https://github.com/user-attachments/assets/d38f02bc-a475-4e9b-9c9f-18462ce3cd0a" width="70%" /> </div>
+
+Object Detection Flow
+
+<div align="center"> <img src="https://github.com/user-attachments/assets/cdeba528-5189-44a0-8d4a-a699b834f74e" width="75%" /> </div>
+---
 ### RC 카 
 아두이노 4WD 주행로봇 프레임 세트 [SZH-EK098]
-<img width="598" height="576" alt="image" src="https://github.com/user-attachments/assets/7f2db326-27ea-4c9a-93cd-bf249d6812e1" />
-
+<div align="center"> <img src="https://github.com/user-attachments/assets/7f2db326-27ea-4c9a-93cd-bf249d6812e1" width="75%" /> </div>
+---
 
 
 
 ## 🛠️ 4.기술 스택
-
-### 💻 Software Stack
-|        분류        | 기술                         |   버전 | 용도                             |
-| :--------------: | -------------------------- | ---: | ------------------------------ |
-|     프로그래밍 언어     | **Python**                 | 3.9+ | 전체 시스템 구현      |
-|      컴퓨터 비전      | **OpenCV**                 |  4.8 | 영상 처리, 차선 탐지, 전처리              |
-|     딥러닝 프레임워크    | **PyTorch**                |  2.0 | YOLOv5 모델 학습 및 추론              |
-|     객체탐지           | **YOLOv5 (Custom)**        |    - | 9개 클래스 객체 탐지 모델                |
-|      데이터 파싱      | **XML Parsing** |    -          | WeatherAPI 기상 데이터 수집           |
-|       직렬 통신      | **pySerial**               |    - | Raspberry Pi ↔ Arduino UART 제어 |
 
 ### 🔧 Hardware Stack
 |   구성품   | 모델                  | 사양         | 역할                         |
@@ -174,6 +173,16 @@ Object Detection
 |   카메라   | **USB WebCam**      | 720p | 도로 영상 입력                   |
 |    모터   | **DC Motor x4**     | 6~12V     | 차량 구동                      |
 |    전원   | **AA Battery Pack** | 6×1.5V     | 모터 및 드라이버 전원 공급            |
+
+### 💻 Software Stack
+|        분류        | 기술                         |   버전 | 용도                             |
+| :--------------: | -------------------------- | ---: | ------------------------------ |
+|     프로그래밍 언어     | **Python**                 | 3.9+ | 전체 시스템 구현      |
+|      컴퓨터 비전      | **OpenCV**                 |  4.8 | 영상 처리, 차선 탐지, 전처리              |
+|     딥러닝 프레임워크    | **PyTorch**                |  2.0 | YOLOv5 모델 학습 및 추론              |
+|     객체탐지           | **YOLOv5 (Custom)**        |    - | 9개 클래스 객체 탐지 모델                |
+|      데이터 파싱      | **XML Parsing** |    -          | WeatherAPI 기상 데이터 수집           |
+|       직렬 통신      | **pySerial**               |    - | Raspberry Pi ↔ Arduino UART 제어 |
 
 ### ⭐ 배지(Badges)
 <div align="center">
