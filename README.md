@@ -43,7 +43,7 @@
 10. [팀 및 기여](#팀-및-기여)
 11. [라이선스](#라이선스)
 
-## 🎯 프로젝트 소개
+## 🎯 1.프로젝트 소개
 
 ### 📚 2024 한이음 ICT 멘토링 프로그램
 
@@ -121,6 +121,51 @@ ADAS 기술은 운전자의 안전과 편의성 측면에서 중요한 요소로
 ---
 
 
-## 주요 기능
+## 2.주요 기능
+
+## 3.시스템 아키텍쳐
+
+## 🛠️ 4.기술 스택 (Tech Stack)
+
+### 💻 Software Stack
+|        분류        | 기술                         |   버전 | 용도                             |
+| :--------------: | -------------------------- | ---: | ------------------------------ |
+|     프로그래밍 언어     | **Python**                 | 3.9+ | 전체 시스템 구현 (CV, DL, 제어 로직)      |
+|      컴퓨터 비전      | **OpenCV**                 |  4.8 | 영상 처리, 차선 탐지, 전처리              |
+|     딥러닝 프레임워크    | **PyTorch**                |  2.0 | YOLOv5 모델 학습 및 추론              |
+| Object Detection | **YOLOv5 (Custom)**        |    - | 9개 클래스 객체 탐지 모델                |
+|      데이터 파싱      | **XML Parsing / Requests** |    - | WeatherAPI 기상 데이터 수집           |
+|       직렬 통신      | **pySerial**               |    - | Raspberry Pi ↔ Arduino UART 제어 |
+
+### 🔧 Hardware Stack
+|   구성품   | 모델                  | 사양         | 역할                         |
+| :-----: | ------------------- | ---------- | -------------------------- |
+|   SBC   | **Raspberry Pi 5**  | 4GB RAM    | 비전 처리, 객체 탐지, 차선 처리, 통합 제어 |
+|   MCU   | **Arduino UNO**     | ATmega328P | 모터 PWM 제어, 하드웨어 레이어 처리     |
+| 모터 드라이버 | **L298N 2채널**       | 최대 20W 출력  | 좌/우 바퀴 모터 제어               |
+|   카메라   | **USB WebCam**      | 720p/1080p | 도로 영상 입력                   |
+|    모터   | **DC Motor x4**     | 6V~12V     | 차량 구동                      |
+|    전원   | **AA Battery Pack** | 6×1.5V     | 모터 및 드라이버 전원 공급            |
+
+### 🧪 Development Environment
+
+|    분류    | 도구                          | 설명                          |
+| :------: | --------------------------- | --------------------------- |
+| 운영체제(OS) | **Raspberry Pi OS (64bit)** | Pi 5의 메인 실행 환경              |
+|   개발 환경  | **VS Code / Thonny**        | Python 개발 및 테스트             |
+|  딥러닝 학습  | **Windows 10 + CUDA 환경**    | YOLOv5 모델 학습                |
+|   버전 관리  | **GitHub**                  | 프로젝트 공유 및 협업                |
+|   문서 작성  | **Notion / Word**           | 결과 보고서 및 분석 문서 정리           |
+|   통신 도구  | **UART Serial Monitor**     | Arduino–Raspberry Pi 연결 테스트 |
+
+### ⭐ 배지(Badges)
+<div align="center">
+[![Python](https://img.shields.io/badge/Python-3.9+-3776AB?style=flat&logo=python&logoColor=white)](https://www.python.org/)
+[![OpenCV](https://img.shields.io/badge/OpenCV-4.8-5C3EE8?style=flat&logo=opencv&logoColor=white)](https://opencv.org/)
+[![PyTorch](https://img.shields.io/badge/PyTorch-2.0-EE4C2C?style=flat&logo=pytorch&logoColor=white)](https://pytorch.org/)
+[![YOLOv5](https://img.shields.io/badge/YOLOv5-Custom-00FFFF?style=flat)](https://github.com/ultralytics/yolov5)
+[![Raspberry Pi](https://img.shields.io/badge/Raspberry%20Pi-5-C51A4A?style=flat&logo=raspberry-pi&logoColor=white)](https://www.raspberrypi.com/)
+[![Arduino](https://img.shields.io/badge/Arduino-UNO-00979D?style=flat&logo=arduino&logoColor=white)](https://www.arduino.cc/)
+</div>
 
 
