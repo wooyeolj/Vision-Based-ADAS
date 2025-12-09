@@ -265,7 +265,7 @@ if class_id == 1:  # 빨간불
 
 ```python
 # API 요청
-url = "http://api.weatherapi.com/v1/current.xml?key=YOUR_KEY&q=Hwaseong"
+url = "http://api.weatherapi.com/v1/--"
 response = requests.get(url)
 xml_data = ET.fromstring(response.content)
 
@@ -273,7 +273,7 @@ xml_data = ET.fromstring(response.content)
 location = xml_data.find('.//name').text        # 위치
 temperature = xml_data.find('.//temp_C').text   # 기온 (°C)
 humidity = xml_data.find('.//humidity').text    # 습도 (%)
-precip_mm = float(xml_data.find('.//precip_mm').text)  # 강수량 (mm)
+mm = float(xml_data.find('.//precip_mm').text)  # 강수량 (mm)
 ```
 
 #### 📊 날씨별 제어 전략
