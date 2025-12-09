@@ -413,8 +413,33 @@ python3 lane_detection/main.py
 python3 object_detection/main.py
 ```
 
-
 ## 프로젝트 결과
+
+### 🎥 실행 영상 
+
+#### 🛣️ 차선 탐지 모드 
+https://www.youtube.com/watch?v=Ap_QmALgXLc
+
+**주요 시연 내용:**
+- Canny Edge Detection + Hough Transform을 통한 실시간 차선 인식
+- 중심점 거리 기반 자동 방향 제어
+- 날씨 정보 기반 PWM 자동 보정
+
+
+#### 🚦 객체 탐지 모드 
+https://www.youtube.com/watch?v=2-qXVjHOrG8
+
+**주요 시연 내용:**
+- YOLOv5 기반 9개 클래스 실시간 탐지
+- 신호등, 표지판, 보행자, 차량 인식
+- 거리 측정 및 자동 속도 제어 (정지, 감속, 주행)
+
+
+### 결과물 상세 이미지
+| <img width="280" alt="Top View" src="https://github.com/user-attachments/assets/8778e7f6-ef6b-4f6c-b12a-f2ed8befb65c" /> | <img width="280" alt="Front View" src="https://github.com/user-attachments/assets/0fa877a7-93de-4f68-b0ac-10db86956b67" /> | <img width="280" alt="Side View" src="https://github.com/user-attachments/assets/6c098dff-3e52-4a94-ab38-d708033b7ed3" /> |
+
+
+
 ## 기술적 도전과 해결
 ## 향후 개선 방향
 ## 팀 및 기여
