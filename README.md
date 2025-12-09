@@ -127,6 +127,7 @@ ADAS 기술은 운전자의 안전과 편의성 측면에서 중요한 요소로
 
 ## 시스템 아키텍쳐
 
+---
 ### 🔧 H/W 구성도
 
 <table> <tr> <td align="center"><b>회로도</b><br> <img src="https://github.com/user-attachments/assets/99de63d4-4cb2-4124-a659-c363e90f96dc" width="95%"> </td> <td align="center"><b>L298N 20W 모터 드라이버</b><br> <img src="https://github.com/user-attachments/assets/05219c48-c05b-43e3-8f69-fc064e20c0f3" width="75%"> </td> </tr> </table>
