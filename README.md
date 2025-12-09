@@ -36,13 +36,12 @@
 2. [주요 기능](#주요-기능)
 3. [시스템 아키텍처](#시스템-아키텍처)
 4. [기술 스택](#기술-스택)
-5. [핵심 알고리즘](#핵심-알고리즘)
-6. [설치 및 실행](#설치-및-실행)
-7. [프로젝트 결과](#프로젝트-결과)
-8. [기술적 도전과 해결](#기술적-도전과-해결)
-9. [향후 개선 방향](#향후-개선-방향)
-10. [팀 및 기여](#팀-및-기여)
-11. [라이선스](#라이선스)
+5. [설치 및 실행](#설치-및-실행)
+6. [프로젝트 결과](#프로젝트-결과)
+7. [기술적 도전과 해결](#기술적-도전과-해결)
+8. [향후 개선 방향](#향후-개선-방향)
+9. [팀 및 기여](#팀-및-기여)
+10. [라이선스](#라이선스)
 
 
 ## 프로젝트 소개
@@ -352,9 +351,69 @@ mm = float(xml_data.find('.//precip_mm').text)  # 강수량 (mm)
 
 ---
 
-
-## 핵심 알고리즘
 ## 설치 및 실행
+
+### 📋 사전 요구사항
+
+#### 하드웨어
+- **Raspberry Pi 5** (8GB RAM)
+- **Arduino UNO** (R3)
+- **Logitech C270** 웹캠 (또는 호환 USB 카메라)
+- **L298N** 모터 드라이버
+- **DC 모터** 
+- **RC Car Kit** (아두이노 4WD 주행로봇 프레임 세트 [SZH-EK098] 또는 호환 rc카)
+- **Raspberry Pi 전원** 
+- **RC Car 전원** 
+
+#### 소프트웨어
+- **Raspberry Pi OS** 
+- **Python** 3.9 이상
+- **Arduino IDE** 1.8.19 이상
+---
+
+### 🛠️ 설정 파일 수정
+#### Serial 포트 변경
+```
+# Line Detection 9번째 줄 수정
+SERIAL_PORT =
+# Object Detection 9번째 줄 수정
+SERIAL_PORT =
+
+```
+#### 날씨 API 키 설정
+```
+# Object Detection 18번째 줄 수정
+WEATHER_API_URL =
+```
+
+---
+
+### 📝 Start
+
+```
+# 1. 시스템 준비
+sudo apt-get update && sudo apt-get upgrade -y
+
+# 2. 프로젝트 클론
+git clone https://github.com/YOUR_USERNAME/Vision-Based-ADAS.git
+cd Vision-Based-ADAS
+
+# 3. 패키지 설치
+pip3 install -r requirements.txt
+
+# 4. 모델 다운로드
+# 커스텀 모델 학습 혹은 yolov5 models 다운 → models/ 폴더에 배치
+
+# 5. Arduino 업로드
+# Arduino IDE에서 arduino/motor_control.ino 업로드
+
+# 6. 실행
+python3 lane_detection/main.py
+# 또는
+python3 object_detection/main.py
+```
+
+
 ## 프로젝트 결과
 ## 기술적 도전과 해결
 ## 향후 개선 방향
