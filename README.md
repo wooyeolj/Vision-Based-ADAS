@@ -156,11 +156,11 @@ offset = detected_line_x - center_x
 
 # 거리 기반 회전 제어
 if offset > 80:  # 차선이 오른쪽에 있음
-    turn_right(left_pwm=10, right_pwm=220)  # 급격한 우회전
+    turn_right(left_pwm=10, right_pwm=220) 
 elif offset < -80:  # 차선이 왼쪽에 있음
-    turn_left(left_pwm=220, right_pwm=10)   # 급격한 좌회전
+    turn_left(left_pwm=220, right_pwm=10) 
 else:
-    move_forward(pwm=70)  # 직진
+    move_forward(pwm=70)  
 ```
 
 #### 📊 특징
