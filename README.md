@@ -226,6 +226,72 @@ distance = (class_heights[int(cls)] * camera_matrix[1, 1]) / h
 - ✅ 추가 학습 불필요
 - ⚠️ 객체 크기 데이터베이스 필요
 
+#### ❗ 충돌 회피 로직
+
+**객체별 맞춤형 제어 전략**
+
+```python
+# 예시 1: 보행자 감지
+if class_id == 3:  # 사람
+    if distance < 0.4m:
+        emergency_stop(pwm=0)      # 긴급 정지
+    elif distance < 0.6m:
+        slow_down(pwm=140)         # 서행
+    else:
+        normal_speed(pwm=200)      # 정상 주행
+
+# 예시 2: 신호등 감지
+if class_id == 1:  # 빨간불
+    if distance < 0.3m:
+        stop(pwm=0)                # 정지선 준수
+    else:
+        prepare_stop(pwm=140)      # 감속 준비
+```
+
+#### 📊 특징
+- ✅ **안정화 로직**: 3프레임 연속 감지 시 제어 명령 실행 (오검출 방지)
+- ✅ **다중 객체 동시 처리**: 한 프레임에서 여러 객체 실시간 탐지
+- ✅ **우선순위 처리**: 가장 가까운 객체 우선 대응
+
+---
+
+### 3. 🌦️ 날씨 적응형 주행 (Weather-Adaptive Control)
+
+날씨 정보 수집 및 PWM 자동 보정
+
+#### 📌 API 연동
+
+**WeatherAPI.com - XML 기반 실시간 기상 데이터**
+
+```python
+# API 요청
+url = "http://api.weatherapi.com/v1/current.xml?key=YOUR_KEY&q=Hwaseong"
+response = requests.get(url)
+xml_data = ET.fromstring(response.content)
+
+# 데이터 추출
+location = xml_data.find('.//name').text        # 위치
+temperature = xml_data.find('.//temp_C').text   # 기온 (°C)
+humidity = xml_data.find('.//humidity').text    # 습도 (%)
+precip_mm = float(xml_data.find('.//precip_mm').text)  # 강수량 (mm)
+```
+
+#### 📊 날씨별 제어 전략
+
+| 날씨 조건 | 강수량 (mm) | PWM 보정 |
+|:---:|:---:|:---:|
+| ☀️ 맑음 | 0 | -0 |
+| 🌧️ 약한 비 | 0.1 ~ 2.5 | -10 |
+| 🌧️ 강한 비 | 2.5+ | -10 |
+| ❄️ 적설 | > 0 | -10 | 
+
+#### 🎯 기술적 의의
+
+1. **외부 API 통합**: REST API 활용한 실시간 데이터 수집
+2. **크롤링 기술**: XML 파싱 및 데이터 추출
+3. **시스템 통합**: 웹 데이터 → 임베디드 하드웨어 제어
+4. **실용성 고려**: 안전을 위한 환경 변수 반영
+
 
 ## 시스템 아키텍처
 
