@@ -368,27 +368,27 @@ mm = float(xml_data.find('.//precip_mm').text)  # 강수량 (mm)
 #### 소프트웨어
 - **Raspberry Pi OS** 
 - **Python** 3.9 이상
-- **Arduino IDE** 1.8.19 이상
+- **Arduino IDE** 
 ---
 
 ### 🛠️ 설정 파일 수정
-#### Serial 포트 변경
+#### 포트 변경
 ```
-# Line Detection 9번째 줄 수정
+# Line Detection 
 SERIAL_PORT =
-# Object Detection 9번째 줄 수정
+# Object Detection 
 SERIAL_PORT =
 
 ```
 #### 날씨 API 키 설정
 ```
-# Object Detection 18번째 줄 수정
+# Object Detection 
 WEATHER_API_URL =
 ```
 
 ---
 
-### 📝 Start
+### 🚀 Start
 
 ```
 # 1. 시스템 준비
