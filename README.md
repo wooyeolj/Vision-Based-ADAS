@@ -215,7 +215,9 @@ camera_matrix =
 [[616.0, 0.0, 320.0],
  [0.0, 616.0, 240.0],
  [0.0,   0.0,   1.0]]
+
 distance = (class_heights[int(cls)] * camera_matrix[1, 1]) / h
+
 거리 = (class_heights에 정의된 높이 * 카메라의 초점거리) / 측정된 객체의 높이
 ```
 
