@@ -436,7 +436,7 @@ https://www.youtube.com/watch?v=2-qXVjHOrG8
 
 
 ### 결과물 상세 이미지
-| <img width="280" alt="Top View" src="https://github.com/user-attachments/assets/8778e7f6-ef6b-4f6c-b12a-f2ed8befb65c" /> | <img width="280" alt="Front View" src="https://github.com/user-attachments/assets/0fa877a7-93de-4f68-b0ac-10db86956b67" /> | <img width="280" alt="Side View" src="https://github.com/user-attachments/assets/6c098dff-3e52-4a94-ab38-d708033b7ed3" /> |
+<img width="280" alt="Top View" src="https://github.com/user-attachments/assets/8778e7f6-ef6b-4f6c-b12a-f2ed8befb65c" />  <img width="280" alt="Front View" src="https://github.com/user-attachments/assets/0fa877a7-93de-4f68-b0ac-10db86956b67" />  <img width="280" alt="Side View" src="https://github.com/user-attachments/assets/6c098dff-3e52-4a94-ab38-d708033b7ed3" /> 
 
 
 
