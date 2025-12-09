@@ -3,10 +3,8 @@
 ### Vision-Based-ADAS
 
 > 센서 없이 **OpenCV**와 **YOLOv5** 로 구현한 지능형 주행 보조 시스템
-
 > Advanced Driver Assistance System
 
-<div align="center">
 
   
 [![Python](https://img.shields.io/badge/Python-3.9+-3776AB?style=flat&logo=python&logoColor=white)](https://www.python.org/)
