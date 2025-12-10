@@ -570,14 +570,14 @@ while True:
 
 ```python
 def turn_left():
-    """드리프트 방식 좌회전"""
+    """드리프트 방식 우회전"""
     left_pwm = 220   # 좌측 고속
     right_pwm = 10   # 우측 저속
     send_pwm(left_pwm, right_pwm)
     time.sleep(0.3)  # 회전 시간
 
 def turn_right():
-    """드리프트 방식 우회전"""
+    """드리프트 방식 좌회전"""
     left_pwm = 10    # 좌측 저속
     right_pwm = 220  # 우측 고속
     send_pwm(left_pwm, right_pwm)
@@ -588,7 +588,7 @@ def turn_right():
 
 - 안정적인 곡선 주행 가능
 - 추가 하드웨어 없이 문제해결
-- 부드러운 곡선 주행 불가 (향후 개선 과제)
+- 정밀한 곡선 주행 불가 (향후 개선 과제)
 
 ---
 
