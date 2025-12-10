@@ -166,7 +166,7 @@ else:
 
 - ✅ **HSV 색공간 튜닝**: 조명 변화에 강건한 차선 검출
 - ✅ **RoI 마스킹**: 불필요한 영역 제거로 연산량 최적화
-- ✅ **프레임 스킵**: 6프레임마다 처리하여 안정성 보장
+- ✅ **프레임 스킵**: 6프레임마다 처리하여 성능 안정화 및 과부하 방지
 
 ---
 
@@ -232,19 +232,19 @@ distance = (class_heights[int(cls)] * camera_matrix[1, 1]) / h
 ```python
 # 예시 1: 보행자 감지
 if class_id == 3:  # 사람
-    if distance < 0.4m:
+    if distance < 0.4:
         emergency_stop(pwm=0)      # 긴급 정지
-    elif distance < 0.6m:
+    elif distance < 0.6:
         slow_down(pwm=140)         # 서행
     else:
         normal_speed(pwm=200)      # 정상 주행
 
 # 예시 2: 신호등 감지
 if class_id == 1:  # 빨간불
-    if distance < 0.3m:
+    if distance < 0.3:
         stop(pwm=0)                # 정지선 준수
     else:
-        prepare_stop(pwm=140)      # 감속 준비
+        prepare_stop(pwm=140)      # 서행
 ```
 
 #### 📊 특징
@@ -383,7 +383,7 @@ SERIAL_PORT =
 #### 날씨 API 키 설정
 ```
 # Object Detection 
-WEATHER_API_URL =
+WEATHER_API_URL = # API KEY 입력 필요
 ```
 
 ---
@@ -572,13 +572,13 @@ while True:
 def turn_left():
     """드리프트 방식 우회전"""
     left_pwm = 220   # 좌측 고속
-    right_pwm = 10   # 우측 저속
+    right_pwm = 10   # 우측 서행
     send_pwm(left_pwm, right_pwm)
     time.sleep(0.3)  # 회전 시간
 
 def turn_right():
     """드리프트 방식 좌회전"""
-    left_pwm = 10    # 좌측 저속
+    left_pwm = 10    # 좌측 서행
     right_pwm = 220  # 우측 고속
     send_pwm(left_pwm, right_pwm)
     time.sleep(0.3)
@@ -661,7 +661,7 @@ Option C: GPU 가속
 **현재 방식의 한계:**
 - 객체 실제 크기 DB 필요
 
-**목표:** 기하학적 삼각측량 → MiDaS 모델로 대체
+**목표:** 단일 카메라 기반 객체 높이 비례 거리 추정 → MiDaS 모델로 대체
 
 **예상 효과:**
 - ✅ 모든 객체의 상대 거리 측정 가능
