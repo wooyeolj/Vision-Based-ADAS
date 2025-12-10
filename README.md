@@ -441,6 +441,159 @@ https://www.youtube.com/watch?v=2-qXVjHOrG8
 
 
 ## 기술적 도전과 해결
+
+프로젝트 진행 중 마주한 기술적 문제들에 대한 해결 과정을 기술함
+
+### ⚡ Challenge 1: 실시간 처리 성능 이슈
+
+#### 🔴 문제 
+
+초기 목표는 **차선 탐지와 객체 탐지를 동시에 실행**하는 통합 시스템
+하지만 Raspberry Pi 5의 성능 한계로 인해 다음과 같은 문제 발생
+
+```
+단일 프레임 처리 시간:
+- 차선 탐지 (Canny + Hough): ~50ms
+- 객체 탐지 (YOLOv5): ~200ms
+- 총 처리 시간: ~250ms  (실시간 처리 불가)
+```
+
+**증상:**
+- 영상 프레임 지연 및 끊김
+- RC카 제어 반응 속도 저하
+- 시스템 과부하로 인한 불안정
+
+#### 🟢 해결
+
+**1️⃣ 듀얼 모드 분리 아키텍처**
+
+통합 시스템 대신 **독립적인 두 가지 모드**로 분리 결정
+
+```python
+# Before: 통합 실행 
+def main_loop():
+    frame = capture_frame()
+    lane_result = detect_lane(frame)      # 50ms
+    object_result = detect_object(frame)  # 200ms
+    control_car(lane_result, object_result)
+
+# After: 모드 분리
+# Mode 1: Lane Detection Only
+def lane_mode():
+    frame = capture_frame()
+    lane_result = detect_lane(frame)      # 50ms
+    control_car(lane_result)
+  
+# Mode 2: Object Detection Only
+def object_mode():
+    frame = capture_frame()
+    object_result = detect_object(frame)  # 200ms
+    control_car(object_result)
+```
+
+**2️⃣ 프레임 스킵 기법 적용**
+
+모든 프레임을 처리하지 않고 **6프레임마다 처리**
+
+```python
+frame_count = 0
+while True:
+    ret, frame = cap.read()
+    frame_count += 1
+    
+    if frame_count % 6 == 0:  # 6프레임마다 처리
+        result = process_frame(frame)
+        control_car(result)
+```
+
+**3️⃣ RoI 마스킹으로 연산 영역 최소화**
+
+전체 프레임 대신 **관심 영역만 처리**:
+```python
+# 전체 프레임: 640x480 = 307,200 pixels
+# RoI 영역: 480x220 = 105,600 pixels
+# 연산량 65% 감소
+```
+
+#### 📝 결과
+
+- 각 모드에서 최적의 성능 발휘
+- 연산량 83% 감소
+- 안정적인 실시간 처리 가능 
+- 두 기능을 동시에 사용 불가 (향후 개선 과제)
+
+---
+
+### 🚗 Challenge 2: 모터 제어 불안정
+
+#### 🔴 문제
+
+하드웨어에 PWM 신호를 전송해도 **RC카가 의도한 대로 주행하지 않는** 치명적인 문제가 발생
+
+**증상:**
+```
+명령: 직진 (left=200, right=200)
+실제: 좌측으로 급격히 회전
+
+명령: 우회전 (left=50, right=200)
+실제: 제자리 회전
+```
+
+**원인 분석:**
+
+1. 2륜 구조의 불안정성
+2. 모터 성능 차이
+3. 무게 중심 불균형
+
+#### 🟢 해결
+
+**1️⃣ 2륜 → 4륜 RC카로 교체**
+**2️⃣ 고품질 모터로 교체**
+
+#### 📝 결과
+
+- 무게 중심 균형 개선
+- 직진 및 회전 제어 향상
+
+---
+
+### 🔄 Challenge 3: 방향 전환의 한계
+
+#### 🔴 문제
+
+일반 자동차와 달리 Arduino RC카는 구조적으로  **바퀴의 방향을 조절할 수 없음**
+
+#### 🟢 해결 방안
+
+**양쪽 바퀴 속도 차이로 회전**
+
+```python
+def turn_left():
+    """드리프트 방식 좌회전"""
+    left_pwm = 220   # 좌측 고속
+    right_pwm = 10   # 우측 저속
+    send_pwm(left_pwm, right_pwm)
+    time.sleep(0.3)  # 회전 시간
+
+def turn_right():
+    """드리프트 방식 우회전"""
+    left_pwm = 10    # 좌측 저속
+    right_pwm = 220  # 우측 고속
+    send_pwm(left_pwm, right_pwm)
+    time.sleep(0.3)
+```
+
+#### 📝 결과
+
+- 안정적인 곡선 주행 가능
+- 추가 하드웨어 없이 문제해결
+- 부드러운 곡선 주행 불가 (향후 개선 과제)
+
+---
+
+
+
+
 ## 향후 개선 방향
 ## 팀 및 기여
 ## 라이선스
