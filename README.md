@@ -195,7 +195,7 @@ YOLOv5 기반 다중 객체 실시간 탐지 및 거리 측정
 | 5 | 🚸 30km/h 제한 | 감속 | - |
 | 6 | 🚸 50km/h 제한 | 감속 | - |
 | 7 | 🚶 횡단보도 표지판 | 주의 주행 | < 0.3m |
-| 8 | 👶 어린이보호구역 | 서행 | < 0.3m |
+| 8 | 👶 어린이보호구역 | 감속 | < 0.3m |
 
 #### 📏 거리 측정 알고리즘
 
@@ -235,7 +235,7 @@ if class_id == 3:  # 사람
     if distance < 0.4:
         emergency_stop(pwm=0)      # 긴급 정지
     elif distance < 0.6:
-        slow_down(pwm=140)         # 서행
+        slow_down(pwm=140)         # 감속
     else:
         normal_speed(pwm=200)      # 정상 주행
 
@@ -244,7 +244,7 @@ if class_id == 1:  # 빨간불
     if distance < 0.3:
         stop(pwm=0)                # 정지선 준수
     else:
-        prepare_stop(pwm=140)      # 서행
+        prepare_stop(pwm=140)      # 감속
 ```
 
 #### 📊 특징
@@ -473,21 +473,21 @@ https://www.youtube.com/watch?v=2-qXVjHOrG8
 # Before: 통합 실행 
 def main_loop():
     frame = capture_frame()
-    lane_result = detect_lane(frame)      # 50ms
-    object_result = detect_object(frame)  # 200ms
+    lane_result = detect_lane(frame)      
+    object_result = detect_object(frame)  
     control_car(lane_result, object_result)
 
 # After: 모드 분리
 # Mode 1: Lane Detection Only
 def lane_mode():
     frame = capture_frame()
-    lane_result = detect_lane(frame)      # 50ms
+    lane_result = detect_lane(frame)      
     control_car(lane_result)
   
 # Mode 2: Object Detection Only
 def object_mode():
     frame = capture_frame()
-    object_result = detect_object(frame)  # 200ms
+    object_result = detect_object(frame)  
     control_car(object_result)
 ```
 
@@ -572,13 +572,13 @@ while True:
 def turn_left():
     """드리프트 방식 우회전"""
     left_pwm = 220   # 좌측 고속
-    right_pwm = 10   # 우측 서행
+    right_pwm = 10   # 우측 감속
     send_pwm(left_pwm, right_pwm)
     time.sleep(0.3)  # 회전 시간
 
 def turn_right():
     """드리프트 방식 좌회전"""
-    left_pwm = 10    # 좌측 서행
+    left_pwm = 10    # 좌측 감속
     right_pwm = 220  # 우측 고속
     send_pwm(left_pwm, right_pwm)
     time.sleep(0.3)
