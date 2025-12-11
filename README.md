@@ -395,7 +395,7 @@ WEATHER_API_URL = # API KEY 입력 필요
 sudo apt-get update && sudo apt-get upgrade -y
 
 # 2. 프로젝트 클론
-git clone https://github.com/YOUR_USERNAME/Vision-Based-ADAS.git
+git clone https://github.com/wooyeolj/Vision-Based-ADAS.git
 cd Vision-Based-ADAS
 
 # 3. 패키지 설치
@@ -712,7 +712,7 @@ Option C: GPU 가속
 |  **임재혁**  |  팀장 | Weather API 기능 구현, Raspberry Pi 프로그래밍       |
 |  **장민혁**  |  팀원 | 차선·객체 탐지 알고리즘 개발 및 Raspberry Pi 적용             |
 |  **조수연**  |  팀원 | 차선·객체 탐지 알고리즘 개발, Arduino 제어, 프로젝트 시나리오 구성   |
-|  **진우열**  |  멘토 | 차선·객체 탐지 알고리즘 개발, Arduino 제어, 프로젝트 시나리오 구성 |
+|  **진우열**  |  팀원 | 차선·객체 탐지 알고리즘 개발, Arduino 제어, 프로젝트 시나리오 구성 |
 | **공통 업무** |  -  | YOLO 데이터셋 제작 및 모델 학습, RC카 제작                  |
 
 ---
